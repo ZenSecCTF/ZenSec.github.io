@@ -66,7 +66,7 @@ En conclusion, il faut donc:
 
 Voilà rapidement un petit script assez moche permettant d'obtenir un fichier qui nous donnera un shell local:
 
-```Python
+```python
 #!/bin/env python3
 
 from struct import pack

