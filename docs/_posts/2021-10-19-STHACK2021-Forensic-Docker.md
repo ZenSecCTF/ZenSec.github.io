@@ -1,3 +1,13 @@
+---
+title: Forensic - Docker Image
+category: Sthack2021
+author: karzemrok
+tags:
+- sthack2021
+- forensic
+- ctf
+description: "Writeup Sthack 2021 - Docker Image - Forensic"
+---
 # Forensic Docker
 
 ## Description

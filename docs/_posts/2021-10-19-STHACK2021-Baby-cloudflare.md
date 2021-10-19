@@ -1,5 +1,13 @@
-# Baby CloudFlare
-
+---
+title: MISC - Baby CloudFlare
+category: Sthack2021
+author: kZk
+tags:
+- sthack2021
+- misc
+- ctf
+description: "Writeup Sthack 2021 - Baby CloudFlare - MISC"
+---
 Le lien vers le challenge nous emène sur un site visiblement protégé
 par un WAF qui nous empêche d'accéder au flag contenu à l'url:
 `https://cloudflare.sthack.fr/flag`

@@ -1,0 +1,26 @@
+---
+layout: page
+permalink: /categories/
+---
+<h1 style="text-align: center;">Category Index</h1>
+{% for tag in site.categories %} 
+{% if tag[0] != "private" %}
+  <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
+{% endif %}
+  <ul class="post-list">
+    {% assign pages_list = tag[1] %}  
+    {% for post in pages_list  %}
+      {% if post.title != null %}
+      {% if post.private != true %}
+      
+      {% if group == null or group == post.group %}
+      <li style="border-bottom: 1px solid #b5e853;" ><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date" style="float: right"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></a></li>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+    {% assign group = nil %}
+  </ul>
+
+{% endfor %}

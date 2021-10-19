@@ -1,6 +1,13 @@
-[PWN] PNG_Analyzer
-===
-
+---
+title: PWN - PNG Analyzer
+category: Sthack2021
+author: vaelio
+tags:
+- sthack2021
+- pwn
+- ctf
+description: "Writeup Sthack 2021 - PNG Analyzer - PWN"
+---
 Introduction
 ===
 Pour ce challenge il faut d'abord réussir à télécharger le binaire à exploiter. 
