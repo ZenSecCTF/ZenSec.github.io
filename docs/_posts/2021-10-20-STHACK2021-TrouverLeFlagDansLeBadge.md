@@ -10,6 +10,12 @@ tags:
 description: "Writeup Sthack 2021 - Trouver le flag dans le badge - Hardware"
 ---
 
+## Description
+
+> Trouver le flag contenu dans le badge
+
+## Résolution
+
 *:cry: Malheureusement je n'ai pas pensé à prendre de screenshot pendant le CTF*
 
 Le challenge débute avec l'acquisition d'un badge sans aucune information particulière.
@@ -38,7 +44,7 @@ Notre objectif sera bien évidemment de dump le contenu du badge, mais avant ça
 On peut trouver un dico adapté directement dans notre répo proxmark3
 
 ```sh
- ✘ kzk@kZk  ~/Documents/proxmark3   master  ls -lah client/dictionaries 
+$ ls -lah proxmark3/client/dictionaries
 total 92K
 drwxr-xr-x  3 kzk kzk 4,0K 16 oct.  02:59 .
 drwxr-xr-x 15 kzk kzk 4,0K 16 oct.  03:08 ..
@@ -63,13 +69,13 @@ $ hf iclass chk f iclass_default_keys.dic
 Bingo, :wink: il nous reste plus qu'à dumper le contenu du badge (vous avez bien compris que n'ayant plus le badge je me souviens plus de la clé qui match :disappointed: )
 
 ```sh
-$ hf iclass dump k {key} 
+$ hf iclass dump k {key}
 ```
 
 Allons voir ce qu'il y a la dedans !
 
 ```sh
- kzk@kZk  ~/Documents/proxmark3   master  hexdump -C hf-iclass-45005B02F9FF12E0-dump.bin
+$ hexdump -C hf-iclass-45005B02F9FF12E0-dump.bin
 00000000  45 00 5b 02 f9 ff 12 e0  12 ff ff ff 7f 1f ff 3c  |E.[............<|
 00000010  fe ff ff ff ff ff ff ff  9d df d6 aa 10 fb f9 98  |................|
 00000020  ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff  |................|
