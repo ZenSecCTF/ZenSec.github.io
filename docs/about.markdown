@@ -11,7 +11,7 @@ Le site est est encore en construction veuillez excuser son minimalisme :wink:
 
 ----
 
-L'équipe est composé de:
+L'équipe est composée de:
 
 * Karzemrok
 * Vaelio
