@@ -8,6 +8,10 @@ tags:
 - ctf
 description: "Writeup Sthack 2021 - PNG Analyzer - PWN"
 ---
+## Fichier
+
+- [Binaire](https://github.com/ZenSecCTF/zensecctf.github.io/releases/download/Sthack2021-Files/png_analyzer)
+
 Introduction
 ===
 Pour ce challenge, il faut d'abord réussir à télécharger le binaire à exploiter. 

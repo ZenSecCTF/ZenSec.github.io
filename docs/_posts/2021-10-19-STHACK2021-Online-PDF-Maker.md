@@ -8,6 +8,11 @@ tags:
 - ctf
 description: "Writeup Sthack 2021 - Online PDF Maker - WEB"
 ---
+## Fichier
+
+- [OnlinePdfMaker.dll](https://github.com/ZenSecCTF/zensecctf.github.io/releases/download/Sthack2021-Files/OnlinePdfMaker.dll)
+
+## Résolution
 
 L'application disponible nous propose d'entrer un texte et de le transformer en PDF
 

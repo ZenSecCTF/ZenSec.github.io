@@ -15,6 +15,10 @@ description: "Writeup Sthack 2021 - Docker Image - Forensic"
 > 
 > `sudo docker pull mayfly277/sthack2021_docker_forensic`
 
+## Fichier
+
+- [sthack2021_docker_forensic.tar](https://github.com/ZenSecCTF/zensecctf.github.io/releases/download/Sthack2021-Files/sthack2021_docker_forensic.tar)
+
 ## Résolution
 
 La première étape est de connaitre les différentes commandes docker utilisée lors de la construction de l'image.
