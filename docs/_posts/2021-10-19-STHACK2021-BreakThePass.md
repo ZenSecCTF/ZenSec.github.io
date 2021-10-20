@@ -8,6 +8,14 @@ tags:
 - ctf
 description: "Writeup Sthack 2021 - BreakThePass - Reverse"
 ---
+## Description
+
+> Just try to break the pass !
+> 
+> [http://34.245.93.104:3000/](http://34.245.93.104:3000/)
+
+## Résolution
+
 L'application Web est un formulaire qui demande un mot de passe.
 
 ![]({{site.url}}/static/upload_6538cf22107f787c3a61175f8c42d0af.png)

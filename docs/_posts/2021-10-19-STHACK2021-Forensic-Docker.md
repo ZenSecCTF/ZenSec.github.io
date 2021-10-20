@@ -8,13 +8,12 @@ tags:
 - ctf
 description: "Writeup Sthack 2021 - Docker Image - Forensic"
 ---
-# Forensic Docker
-
 ## Description
 
 
-I lost the password i use to encrypt my flag file. Could you retreive my flag ?
-`sudo docker pull mayfly277/sthack2021_docker_forensic`
+> I lost the password i use to encrypt my flag file. Could you retreive my flag ?
+> 
+> `sudo docker pull mayfly277/sthack2021_docker_forensic`
 
 ## Résolution
 

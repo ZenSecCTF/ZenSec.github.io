@@ -8,6 +8,13 @@ tags:
 - ctf
 description: "Writeup Sthack 2021 - Baby CloudFlare - MISC"
 ---
+
+## Description
+
+> Baby challenge [link here](https://cloudflare.sthack.fr/)
+
+## Résolution
+
 Le lien vers le challenge nous emmène sur un site visiblement protégé
 par un WAF qui nous empêche d'accéder au flag contenu à l'URL:
 
