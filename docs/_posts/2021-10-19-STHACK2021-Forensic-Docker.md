@@ -43,11 +43,11 @@ $ tar xfO sthack2021_docker_forensic.tar 'df9bf87b22e3a6cb1e50a016f9add403c2024c
 /bin/sh -c rm /pass.txt
 ```
 
-On voit dans les commandes la suppression du fichier `pass.txt` qui a servi dans la commande précédent au chiffrement d'un pastebin via une commande openssl.
+On voit dans les commandes la suppression du fichier `pass.txt` qui a servi dans la commande précédente au chiffrement d'un Pastebin via une commande OpenSSL.
 
 On suppose donc qu'il a été ajouté grâce au `COPY` de l'étape d'avant.
 
-Pour être sûr, il est possible de chercher le fichier `pass.txt` dans tout les couches de l'image:
+Pour être sûr, il est possible de chercher le fichier `pass.txt` dans toutes les couches de l'image :
 
 ```sh
 $ mkdir docker_image
@@ -56,13 +56,13 @@ $ find docker_image -name layer.tar -exec tar xfO {} 'pass.txt' 2>/dev/null \;
 MySupAAAS3cure_PassSSS
 ```
 
-Le mot de passe est donc `MySupAAAS3cure_PassSSS`. Nous devons maintenant récupérer le fichier chiffré par openssl.
+Le mot de passe est donc `MySupAAAS3cure_PassSSS`. Nous devons maintenant récupérer le fichier chiffré par OpenSSL.
 
 ```sh
 $ find docker_image -name layer.tar -exec tar xfO {} 'flag.enc' 2>/dev/null \; > flag.enc
 ```
 
-Il ne nous reste plus qu'à exécuter la commande openssl de déchiffrement.
+Il ne nous reste plus qu'à exécuter la commande OpenSSL de déchiffrement.
 
 ```sh 
 $ openssl aes-256-cbc -d -iter 10 -in flag.enc              

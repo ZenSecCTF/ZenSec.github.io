@@ -23,7 +23,7 @@ document.write('test');
 
 ![]({{site.url}}/static/upload_dd513641a33e58411ece557d3e82cfe2.png)
 
-Il peut être aussi intéressant de savoir d'ou est rendu le PDF
+Il peut être aussi intéressant de savoir d'où est rendu le PDF
 
 ```html
 <script>
@@ -53,7 +53,7 @@ Maintenant que nous sommes en mesure de télécharger des fichiers sur la machin
 
 ![]({{site.url}}/static/upload_755639ef667bd38587be7cbcf89d83f0.png)
 
-Nous savons que l'application est de l'ASP.net, il faut donc chercher un fichier **dll**. En tatonnant un peu, on trouve que le nom du fichier dll est le même que le copyright : `OnlinePdfMaker.dll`
+Nous savons que l'application est de l'ASP.net, il faut donc chercher un fichier **dll**. En tâtonnant un peu, on trouve que le nom du fichier dll est le même que le copyright : `OnlinePdfMaker.dll`
 
 Une fois la Dll décompilée avec [ILSpy](https://github.com/icsharpcode/ILSpy), on trouve ce bout de code qui semble gérer l'affichage du flag:
 
@@ -76,7 +76,7 @@ else
 
 Après la ligne 4, text2 à la valeur `GGbR0`. A cette valeur, on ajoute `ZG9uJ3RfZ3Vlc3NfbG9va19hdF90aGVfY29kZSEhXzsp` dans sa forme base64 décodée (`don't_guess_look_at_the_code!!_;)`)
 
-Ensuite cette varible est utilisée en tant que clé XOR pour la valeur base64 décodée de `FBMqE3MvFDkUGDM4MVUdFgAwAEA0Cj4SbwEGAQA3B1c6QhE7CAg6`
+Ensuite cette variable est utilisée en tant que clé XOR pour la valeur base64 décodée de `FBMqE3MvFDkUGDM4MVUdFgAwAEA0Cj4SbwEGAQA3B1c6QhE7CAg6`
 
 Ce qui nous donne le flag `STHACK{W3ll_D0ne_\o/_U_f0und_Th3_c0d3!}`
 

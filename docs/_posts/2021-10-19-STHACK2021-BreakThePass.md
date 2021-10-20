@@ -30,7 +30,7 @@ function check_password() {
 
 La valeur du mot de passe est transformée en tableau d'**int** et mise en mémoire.
 
-Le pointeur vers cet espace mémoire est passé en paramètre de '**_check_the_flag**' qui est un alias vers un fonction interne d'un programme wasm.
+Le pointeur vers cet espace mémoire est passé en paramètre de '**_check_the_flag**' qui est un alias vers une fonction interne d'un programme wasm.
 
 Nous allons transformer le WASM en JS (avec [wasm2js](https://github.com/WebAssembly/binaryen)) et en WAT (avec [wasm2wat](https://github.com/WebAssembly/wabt)) pour avoir deux vues différentes pour nous simplifier l'analyse du binaire.
 
@@ -39,7 +39,7 @@ wasm2wat assets/authentification.wasm -o assets/authentification.wat
 wasm2js assets/authentification.wasm -o assets/authentification.wasm.js
 ```
 
-Le format JS est plus lisible mais le WAT à l'avantage de pouvoir être retransformé en WASM facilement.
+Le format JS est plus lisible, mais le WAT à l'avantage de pouvoir être retransformé en WASM facilement.
 
 Pour qu'une fonction du WASM soit utilisable en JS, il faut qu'elle soit exportée, ce qui va nous aider à l'identifier.
 
@@ -61,7 +61,7 @@ On voit des appels à 3 fonctions différentes:
 
 '**fimport$1**' dans notre cas exécute **gettimeofday**, elle ne sera pas intéressante ici.
 
-La fonction **fimport$0** prend en paramètre un offset dans les data et utilise la string disponible à cette adresse en tant que paramètre de **emscripten_run_script** qui se charge d'exécuter la chaine de caractère en tant que JavaScript dans le navigateur
+La fonction **fimport$0** prend en paramètre un offset dans les data et utilise la chaîne de caractères disponible à cette adresse en tant que paramètre de **emscripten_run_script** qui se charge d'exécuter la chaine de caractère en tant que JavaScript dans le navigateur
 
 Les datas WASM sont déclarée ici dans le fichier JS : 
 ![]({{site.url}}/static/upload_881e26d11784bbd5f477eb07da13a463.png)
@@ -90,7 +90,7 @@ L'appel à fimport$0(1138) est une fonctionnalité anti-bruteforce.
 
 Il nous reste donc l'appel à la fonction $4 pour continuer. 
 
-L'autre appel à fimport$0 se fait dans la fonction $2 ce qui semble être un bon point de sorti. Pour le confirmer, on peut modifier le WAT pour sauter dans cette fonction est voir ce qui se passe.
+L'autre appel à fimport$0 se fait dans la fonction $2 ce qui semble être un bon point de sorti. Pour le confirmer, on peut modifier le WAT pour sauter dans cette fonction et voir ce qui se passe.
 
 Pour repérer la fonction correspondante dans le fichier WAT, on peut chercher l'instruction `call 0`, qui apparait 3 fois
 
@@ -121,7 +121,7 @@ Notre unique sortie favorable de la fonction $33 était la fonction $4
 
 Dans cette fonction, les fonctions de sortie possible sont $1 et $5. La fonction $1 étant la fonction indiquant un mauvais mot de passe, il faut donc accéder à $5
 
-On voit une comparaison avec le nombre 27, on peut supposer qu'ici, il y a 26 caractère dans le mot de passe (26+\x00).
+On voit une comparaison avec le nombre 27, on peut supposer qu'ici, il y a 26 caractères dans le mot de passe (26+\x00).
 
 
 ![]({{site.url}}/static/upload_254e7b80970543262e764f0eb7b56e83.png)

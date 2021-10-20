@@ -10,12 +10,12 @@ description: "Writeup Sthack 2021 - PNG Analyzer - PWN"
 ---
 Introduction
 ===
-Pour ce challenge il faut d'abord réussir à télécharger le binaire à exploiter. 
+Pour ce challenge, il faut d'abord réussir à télécharger le binaire à exploiter. 
 Lorsqu'on se connecte à l'index du site on peut remarquer que le site tente de charger http://dev.img.local/troll.png. 
-Or ce nom de domaine ne résouds pas. C'est notre hint. Ici on va simplement éditer notre `/etc/hosts` afin de faire pointer localement le nom de domaine vers l'ip originale.
-A partir de là, dans le dossier upload, on peut trouver le binaire `png_analyzer`
+Or ce nom de domaine ne résouds pas. C'est notre hint. Ici on va simplement éditer notre `/etc/hosts` afin de faire pointer localement le nom de domaine vers l'IP originale.
+À partir de là, dans le dossier upload, on peut trouver le binaire `png_analyzer`
 
-Voila les info du programme:
+Voilà les infos du programme :
 
 ```
 ~ 
@@ -34,7 +34,7 @@ Voila les info du programme:
 
 TL;DR
 ===
-En résumé le programme va prendre en argument un fichier à analyser, vérfier que le fichier est bien un PNG, va ensuite analyser chaque bloc de donnée du PNG et affichera les meta donnée de tous les blocs de type `tEXt` avant de finir par exécuter la fonction `do_nothing` avec en paramètre le titre du bloc.
+En résumé le programme va prendre en argument un fichier à analyser, vérifier que le fichier est bien un PNG, va ensuite analyser chaque bloc de donnée du PNG et affichera les méta-donnés de tous les blocs de type `tEXt` avant de finir par exécuter la fonction `do_nothing` avec en paramètre le titre du bloc.
 
 Par exemple, si nous avons dans notre PNG un bloc de type `tEXt` dont le titre est `Comment` alors le programme exécutera `do_nothing("Comment")`. La preuve en image:
 
@@ -46,7 +46,7 @@ Lorsqu'on reverse le binaire une chose nous saute aux yeux, le pointer vers `do_
 
 ![]({{site.url}}/static/upload_14379e33db0d981f8667232307814ae2.png)
 
-Voici, en pseudocode, la fonction `parse_chunk` qui parse les fameux bloc PNG:
+Voici, en pseudo-code, la fonction `parse_chunk` qui parse les fameux bloc PNG:
 
 
 ![]({{site.url}}/static/upload_5a14c7c981fb9ec115bd91481ce42059.png)
@@ -153,4 +153,4 @@ Megapixels                      : 0.000084
 
 Conclusion
 ===
-Un petit challenge plutot simple mais intéressant :+1: 
+Un petit challenge plutôt simple, mais intéressant :+1: 
