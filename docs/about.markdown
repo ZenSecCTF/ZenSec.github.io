@@ -4,6 +4,10 @@ title: whoami
 permalink: /whoami/
 ---
 
+<p style="text-align: center">
+<img style="max-width:300px" src="/static/zensec-logo.png">
+</p>
+
 Nous sommes ZenSec l'équipe sécurité de [Zenika](https://zenika.com) et vous trouverez ici l'ensemble des writeups 
 des CTF auquel nous participons.
 
@@ -19,4 +23,4 @@ L'équipe est composée de:
 * kZk
 
 
-[Zenika]: https://zenika.com
+
