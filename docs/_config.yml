@@ -34,4 +34,11 @@ plugins:
 - jekyll-feed
 - jemoji
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /static/zensec-logo.png
+
+
 permalink: /:categories/:name
