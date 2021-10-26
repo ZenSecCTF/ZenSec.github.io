@@ -276,7 +276,7 @@ system_libc = unpack(memleak(r, OFFSET, JUNK, 0x804c028)[:4])
 log.info("system@libc: "+hex(system_libc))
 ```
 
-Nous allons modifier notre fonction *write_what_where* pour supporter des écritures d'adresse plus longue.
+Nous allons modifier notre fonction *write_what_where* pour supporter des écritures d'adresses plus longues.
 
 ```python
 def write_what_where(what, where, offset, junk=b""):
