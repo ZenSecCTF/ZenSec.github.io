@@ -38,7 +38,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /static/zensec-logo.png
+      image: /static/zensec-logo-256x256.png
 
 
 permalink: /:categories/:name
