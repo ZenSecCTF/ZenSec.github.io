@@ -4,6 +4,17 @@ permalink: /whoami/karzemrok
 avatar: whoami/karzemrok.png
 nickname: Karzemrok
 ---
+## Certifications
+
+- OSCP
+- CEH
+- CHFI
+
+## Liens
+
+- [Linkedin](https://www.linkedin.com/in/thomas-fady)
+- [Root-me](https://www.root-me.org/Karzemrok)
+- [HackTheBox](https://app.hackthebox.com/profile/27884)
 
 ## Publications
 
