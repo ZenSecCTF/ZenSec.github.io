@@ -17,10 +17,10 @@ Le site est est encore en construction veuillez excuser son minimalisme :wink:
 
 L'équipe est composée de:
 
-* Karzemrok
-* Vaelio
-* Sogam
-* kZk
+* [Karzemrok](/whoami/karzemrok)
+* [Vaelio](/whoami/vaelio)
+* [Sogam](/whoami/sogam)
+* [kZk](/whoami/kzk)
 
 
 

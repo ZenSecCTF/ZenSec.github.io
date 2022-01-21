@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<h1 style="text-align: center;">
+    <span style="vertical-align: middle;
+    display: inline-flex;">
+      {% if page.avatar %}
+      <img src="{{site.url}}/static/{{ page.avatar }}" height="50px" style="margin-right: 20px;
+      border: solid 2px;
+      border-radius: 50%;">{% endif %} {{ page.nickname }}
+    </span>
+</h1>
+
+{{content}}
+
+<h2>Articles</h2>
+
+{% for tag in site.categories %} 
+  <ul class="post-list">
+    {% assign pages_list = tag[1] %}  
+    {% for post in pages_list  %}
+      {% if post.title != null %}
+      {% if post.private != true %}
+      {% if post.author contains page.nickname or post.authors contains page.nickname %}
+      
+      {% if group == null or group == post.group %}
+      <li style="border-bottom: 1px solid #b5e853;" ><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date" style="float: right"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+    {% assign group = nil %}
+  </ul>
+{% endfor %}

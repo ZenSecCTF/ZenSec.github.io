@@ -1,7 +1,7 @@
 ---
 title: Forensic - Docker Image
 category: Sthack2021
-author: karzemrok
+author: Karzemrok
 tags:
 - sthack2021
 - forensic

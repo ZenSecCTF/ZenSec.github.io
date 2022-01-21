@@ -9,10 +9,27 @@ layout: default
 
 {% if page.authors %}
 <p class="view">by {% for author in page.authors %}
-  {{ author }}{% if page.authors.last != author %}, {% endif %}
+  {% assign author_page = nil %}
+  {% for page in site.pages %}
+    {% if page.nickname == author %}
+      {% assign author_page = page %}
+    {% endif %}
+  {% endfor %}
+  {% if author_page %}<a href="{{ author_page.permalink }}">{{ author }}</a>{% else %}{{ author }}{% endif %}{% if page.authors.last != author %}, {% endif %}
+  
 {% endfor %}</p>
 {% else %}
-<p class="view">by {{ page.author | default: site.author }}</p>
+{% assign author_page = nil %}
+{% for page in site.pages %}
+  {% if page.nickname == author %}
+    {% assign author_page = page %}
+  {% endif %}
+{% endfor %}
+{% if author_page %}
+<p class="view">by <a href="{{ author_page.permalink }}">{{ author }}</a></p>
+{% else %}
+<p class="view">by {{ author }}</p>
+{% endif %}
 {% endif %}
 
 {{content}}

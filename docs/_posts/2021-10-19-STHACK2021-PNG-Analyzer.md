@@ -1,7 +1,7 @@
 ---
 title: PWN - PNG Analyzer
 category: Sthack2021
-author: vaelio
+author: Vaelio
 tags:
 - sthack2021
 - pwn

@@ -2,8 +2,8 @@
 title: Série - Beers And Flags
 category: Sthack2021
 authors: 
-  - karzemrok
-  - vaelio
+  - Karzemrok
+  - Vaelio
 tags:
 - sthack2021
 - programmation
